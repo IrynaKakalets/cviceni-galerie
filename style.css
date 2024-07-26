@@ -2,7 +2,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 ::after,
 ::before {
@@ -15,13 +14,6 @@ body {
 
 img {
   display: block;
-  width: 100%;
-  height: auto;
-}
-
-.foto {
-  float: left;
-  width: 100%;
 }
 
 /*
@@ -36,28 +28,34 @@ výchozí (=mobil) - 1 obrázek na řádku (tj. 12 obrázků pod sebou)
 širší než 800px  - 4 obrázky vedle sebe
 širší než 1000px - 6 obrázků vedle sebe
 */
-@media screen and (min-width: 500px) {
+.foto img {
+  width: 100%;
+}
 
+@media (min-width: 500px) {
+  .galerie {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .foto {
     width: 50%;
   }
 }
 
-@media screen and (min-width: 650px) {
-
+@media (min-width: 650px) {
   .foto {
-    width: 33.33%;
+    width: calc(100% / 3);
   }
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 800px) {
   .foto {
-    width: 25%;
+    width: calc(100% / 4);
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
   .foto {
-    width: 16.66%;
+    width: calc(100% / 6);
   }
 }
